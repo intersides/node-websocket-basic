@@ -1,3 +1,7 @@
+var path = require('path');
+var appDir = path.dirname(__dirname);
+console.error(appDir);
+
 var WebSocketServer = require("ws").Server;
 var http = require("http");
 var express = require("express");
@@ -6,11 +10,17 @@ var port = process.env.PORT || 5000;
 var httpPort = 3001; //port 80 for nodejs need to run as root
 
 var app = express();
-    app.use(express.static(__dirname+ "/../"));
+
+    app.use(express.static(appDir+ "/client/"));
+
     app.get('/A', function(req, res, next) {
         console.log('receiving get request');
 		res.send("A responded");
     });
+    app.get('/', function(req, res, next){
+        res.sendFile(appDir+"/client/index.html");
+    });
+
     app.listen(httpPort); //port 80 need to run as root
 
     console.log("app listening on %d ", httpPort);

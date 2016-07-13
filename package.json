@@ -2,12 +2,13 @@
   "name": "node-websocket-basic",
   "version": "1.0.0",
   "description": "Putting together a simple application using pure web sockets and nodejs",
-  "main": "server/index.js",
+  "main": "server/app.js",
   "directories": {
     "test": "tests"
   },
   "dependencies": {
     "express": "^4.14.0",
+    "rootpath": "^0.1.2",
     "ws": "^0.4.32"
   },
   "devDependencies": {},

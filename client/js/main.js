@@ -12,9 +12,8 @@ var App = function(in_params){
     };
     this.params = $.extend(this.params, in_params);
 
-    this.httpServer = location.origin+":"+this.params.httpPort+"/";
-
-	console.log(this.httpServer);
+    this.httpServer = location.protocol+"//"+location.hostname+":"+this.params.httpPort+"/";
+	console.info(this.httpServer);
 
     this.wsServer = "ws://"+this.params.baseHost+":"+this.params.wsPort+"/";
 
@@ -71,7 +70,6 @@ App.prototype.initTestCommand = function(){
 
             _this.connectToServer({}, function(cb_connectionId){
                 console.log("*", cb_connectionId);
-
             })
         });
 
@@ -87,6 +85,7 @@ App.prototype.initTestCommand = function(){
         .appendTo("body")
         .text("get request")
         .on("click", function(){
+            console.info("about to perform an ajax request");
             _this.performGet();
         });
 
@@ -96,6 +95,7 @@ App.prototype.initTestCommand = function(){
 };
 
 App.prototype.performGet = function(){
+    console.info(this.httpServer);
 
     $.ajax({
         url:this.httpServer+"A",
