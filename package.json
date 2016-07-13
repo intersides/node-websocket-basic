@@ -1,14 +1,31 @@
 {
-  "name": "node-ws-test",
-  "version": "0.0.1",
+  "name": "node-websocket-basic",
+  "version": "1.0.0",
+  "description": "Putting together a simple application using pure web sockets and nodejs",
+  "main": "server/index.js",
+  "directories": {
+    "test": "tests"
+  },
   "dependencies": {
-    "express": "*",
-    "ws": "*"
+    "express": "^4.14.0",
+    "ws": "^0.4.32"
   },
-  "engines": {
-    "node": "4.x"
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node ./server/index.js"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intersides/node-websocket-basic.git"
+  },
+  "keywords": [
+    "nodejs",
+    "websockets"
+  ],
+  "author": "Marco Falsitta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intersides/node-websocket-basic/issues"
+  },
+  "homepage": "https://github.com/intersides/node-websocket-basic#readme"
 }
