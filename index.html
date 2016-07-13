@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="UTF-8">
+
+    <title>web socket playground</title>
+
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="libs/test/qunit-1.15.0.css" type="text/css">
+
+    <script src="libs/object.watch.js"></script>
+    <script src="libs/jquery-1.11.1.min.js"></script>
+    <script src="libs/test/qunit-1.15.0.js"></script>
+    <script src="tests/test.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var myApp = new App({
+                unitTest:true,
+                wsPort:5000,
+                httpPort:80
+            });
+            myApp.init();
+
+        });
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>
